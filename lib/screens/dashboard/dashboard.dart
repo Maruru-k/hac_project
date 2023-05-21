@@ -1,9 +1,9 @@
 import 'package:hac_project/screens/message_secreen/message_screen.dart';
+import 'package:hac_project/screens/payments_screen/payments_screen.dart';
 import 'package:hac_project/widgets/buttom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hac_project/screens/notification_screen/notification_screen.dart';
 import 'package:hac_project/screens/profile_screen/profile_screen.dart';
-import 'package:hac_project/screens/services_screen/services_screen.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class _DashboardState extends State<Dashboard> {
   List<Widget> page = [
     NotificationScreen(),
     MessageScreen(),
-    ServicesScreen(),
+    PaymentsScreen(),
     ProfileScreen(),
   ];
 
