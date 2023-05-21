@@ -11,7 +11,7 @@ class AmountBanner extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 24),
       decoration: BoxDecoration(
-        color: TdpColors.wight,
+        color: TdpColors.white,
         borderRadius: BorderRadius.circular(24),
       ),
       child: Column(
@@ -38,12 +38,12 @@ class AmountBanner extends StatelessWidget {
                     children: [
                       Text(
                         "Оплатить",
-                        style: TdpTextStyle.small(TdpColors.wight),
+                        style: TdpTextStyle.small(TdpColors.white),
                       ),
                       const SizedBox(width: 8),
                       const Icon(
                         Icons.arrow_forward_outlined,
-                        color: TdpColors.wight,
+                        color: TdpColors.white,
                       )
                     ],
                   ),

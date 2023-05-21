@@ -8,30 +8,32 @@ class PaymentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
-        child: CustomScrollView(
-          slivers: [
-            const SliverToBoxAdapter(
-              child: Padding(
-                padding: EdgeInsets.only(bottom: 20),
-                child: PaymentAmountWidget(amounts: [545, 50, 190]),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: ListView.separated(
-                itemCount: 10,
-                shrinkWrap: true,
-                itemBuilder: (context, index) => const PaymentCard(
-                  icon: Icon(Icons.ac_unit_rounded),
-                  title: "title",
-                  subtitle: "subtitle",
-                  amount: 2154,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
+          child: CustomScrollView(
+            slivers: [
+              const SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: PaymentAmountWidget(amounts: [545, 50, 190]),
                 ),
-                separatorBuilder: (context, index) => const Divider(),
               ),
-            )
-          ],
+              SliverToBoxAdapter(
+                child: ListView.separated(
+                  itemCount: 10,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) => const PaymentCard(
+                    icon: "assets/icons/tund.svg",
+                    title: "title",
+                    subtitle: "subtitle",
+                    amount: 2154,
+                  ),
+                  separatorBuilder: (context, index) => const Divider(),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

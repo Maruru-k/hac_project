@@ -38,7 +38,7 @@ class PromptCard extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: TdpTextStyle.small(TdpColors.wight)
+                style: TdpTextStyle.small(TdpColors.white)
                     .copyWith(fontWeight: FontWeight.w600),
               ),
             ),

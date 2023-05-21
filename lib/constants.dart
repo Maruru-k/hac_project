@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const String baseUrl = "80.90.179.161:8000";
+const String baseUrl = "80.90.179.161/api/";
 const String fontFamily = 'WixMadeforText';
 
 final List<Color> colors = [

@@ -16,6 +16,7 @@ class WriteMessageScreen extends StatefulWidget {
 class _WriteMessageScreenState extends State<WriteMessageScreen> {
   List<String> images = [];
   double height = 56;
+  bool isFocused = false;
 
   void selectImage() async {
     final ImagePicker picker = ImagePicker();
@@ -106,8 +107,21 @@ class _WriteMessageScreenState extends State<WriteMessageScreen> {
                                   crossAxisCount: 3,
                                 ),
                                 itemBuilder: (context, index) => InkWell(
+                                  onHover: (value) {
+                                    setState(() {
+                                      isFocused = value;
+                                    });
+                                  },
                                   onTap: () => deleteImage(index),
-                                  child: Image.asset(images[index]),
+                                  child: Stack(children: [
+                                    Image.asset(images[index]),
+                                    if (isFocused)
+                                      Icon(
+                                        Icons.close,
+                                        size: 100,
+                                        color: TdpColors.grey.withOpacity(0.4),
+                                      ),
+                                  ]),
                                 ),
                               ),
                             ),
@@ -135,12 +149,12 @@ class _WriteMessageScreenState extends State<WriteMessageScreen> {
                   children: [
                     Text(
                       "Написать  обращение",
-                      style: TdpTextStyle.standard(TdpColors.wight),
+                      style: TdpTextStyle.standard(TdpColors.white),
                     ),
                     const SizedBox(width: 8),
                     const Icon(
                       Icons.arrow_forward_outlined,
-                      color: TdpColors.wight,
+                      color: TdpColors.white,
                     ),
                   ],
                 ),

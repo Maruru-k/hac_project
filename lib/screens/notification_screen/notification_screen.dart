@@ -56,7 +56,7 @@ class NotificationScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
                 decoration: BoxDecoration(
-                  color: TdpColors.wight,
+                  color: TdpColors.white,
                   borderRadius: BorderRadius.circular(32),
                 ),
                 child: ListView.separated(
@@ -67,6 +67,23 @@ class NotificationScreen extends StatelessWidget {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        if (index == 0)
+                          Center(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 4,
+                                  width: 32,
+                                  decoration: BoxDecoration(
+                                    color: TdpColors.grey.withOpacity(0.4),
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                              ],
+                            ),
+                          ),
                         if (index == 0)
                           Padding(
                             padding: const EdgeInsets.only(bottom: 20),

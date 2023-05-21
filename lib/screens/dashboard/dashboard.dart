@@ -1,3 +1,4 @@
+import 'package:hac_project/models/user.dart';
 import 'package:hac_project/screens/message_secreen/message_screen.dart';
 import 'package:hac_project/screens/payments_screen/payments_screen.dart';
 import 'package:hac_project/widgets/buttom_bar.dart';
@@ -19,7 +20,14 @@ class _DashboardState extends State<Dashboard> {
     NotificationScreen(),
     MessageScreen(),
     PaymentsScreen(),
-    ProfileScreen(),
+    ProfileScreen(
+      user: User(
+        id: 2,
+        name: "name",
+        phoneNumber: "phoneNumber",
+        email: "email",
+      ),
+    ),
   ];
 
   @override
