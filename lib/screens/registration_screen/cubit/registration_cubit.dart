@@ -17,11 +17,11 @@ class RegistrationCubit extends Cubit<RegistrationState> {
           ),
         );
 
-  void register({
+  Future<void> register({
     required String username,
     required String password,
-  }) {
-    _authCubit.login(
+  }) async {
+    await _authCubit.login(
       username: username,
       password: password,
       isRegisteredUser: false,

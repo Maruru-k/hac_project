@@ -7,12 +7,11 @@ import 'package:hac_project/reposutories/auth_reposytory.dart';
 import 'package:hac_project/screens/dashboard/dashboard.dart';
 import 'package:hac_project/screens/login_screen/cubit/login_cubit.dart';
 import 'package:hac_project/screens/registration_screen/cubit/registration_cubit.dart';
+import 'package:hac_project/screens/splash_screen/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  await Future.delayed(const Duration(seconds: 1));
-  FlutterNativeSplash.remove();
   runApp(const MyApp());
 }
 
@@ -52,7 +51,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ],
-          child: Dashboard(),
+          child: SplashScreen(),
         ),
       ),
     );
